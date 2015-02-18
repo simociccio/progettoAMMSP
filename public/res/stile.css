@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+body{
+	background-color: #dedede;
+	width: 100%;
+	font-family: "PT Sans",sans-serif;
+	font-weight: 400;
+}
+#user-info{
+   /*  background-color: pink; */
+    width: 100%;
+    text-align: right;
+}
+#page{
+	border-radius: 10px;
+	background-color: #c2c2c2;
+	width: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 15px;
+}
+#header {
+	margin-top: 15px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+#menu{
+	
+	background-color: cornflowerblue;
+	border-radius: 10px;
+	vertical-align: bottom;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+}
+
+#contenuto{
+	margin-top: 15px;
+	text-align: left;
+
+}
+
+#menu-items{
+	vertical-align: text-bottom;
+	text-align: center;
+}
+#menu-items{
+	margin: 0;
+	padding: 0;
+}
+#menu-items li{
+	vertical-align: text-bottom;
+	margin-left: 7px;
+	margin-right: 7px;
+	padding: 0;
+	display: inline-block;
+}
+
+
+
+#menu-items li:hover{
+    color: #c2c2c2;
+	font-weight: 700;
+}
+
+
+#form p{
+	
+	text-align: center;
+}
+
+#loginform{
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+    font-weight: 700;
+}
+#loginform input{
+    font-size: 24px;
+    font-family: monospace;
+}
