@@ -3,7 +3,7 @@
 <head>
 	<title><?= $datiPagina->getTitolo() ?> - <?= Impostazioni::$nomePortale ?></title>
 	<link href="res/stile.css" rel="stylesheet" type="text/css">
-    <base href="http://192.168.1.35/progettoAmmS/public/">
+    <base href="http://spano.sc.unica.it/amm2014/porcuSimone/public/">
 	<meta charset="UTF-8">
 	<script language="javascript">
 		function digits(fld) {
