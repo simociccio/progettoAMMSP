@@ -8,3 +8,5 @@ class Impostazioni {
 
     public static $nomePortale = "La Videotecca, dove ballano le storie";
 }
+
+echo $_SERVER['HTTP_HOST'];
