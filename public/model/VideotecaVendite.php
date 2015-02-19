@@ -53,6 +53,7 @@ class VideotecaVendite {
 
 
         // Se tutto va bene committo
+        echo "--breakpoint";
         if (!$mysqli->commit()) {
             print("Transaction commit failed\n");
             exit();
