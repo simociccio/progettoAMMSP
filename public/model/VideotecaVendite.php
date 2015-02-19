@@ -35,7 +35,12 @@ class VideotecaVendite {
                 $ts = date('Y-m-d H:i:s');
                 $queryInserisciAcquisto = "INSERT INTO `videoteca`.`vendite` (`id`, `idUtente`, `idFilm`, `timestamp`) VALUES (NULL, '$idU', '$idF', '$ts');";
                 $result = $mysqli->query($queryAggiornaQuantita);
-                $result = $mysqli->query($queryInserisciAcquisto);
+               // $result = $mysqli->query($queryInserisciAcquisto);
+                if (!$mysqli->query($queryInserisciAcquisto)) {
+    printf("Errormessage: %s\n", $mysqli->error);
+}
+
+
             }
             else
             {
@@ -53,7 +58,7 @@ class VideotecaVendite {
 
 
         // Se tutto va bene committo
-        echo "--breakpoint";
+
         if (!$mysqli->commit()) {
             print("Transaction commit failed\n");
             exit();
