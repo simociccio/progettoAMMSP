@@ -12,6 +12,14 @@
 
 
 switch($_SERVER['HTTP_HOST']){
+    case '192.168.1.35':
+        Impostazioni::$db_host = 'localhost';
+        Impostazioni::$db_user = 'root';
+        Impostazioni::$db_password = 'gianni';
+        Impostazioni::$db_name='videoteca';
+        Impostazioni::$app_path = 'http://'. $_SERVER['HTTP_HOST'] . '/progettoAMMSP/public/';
+        Impostazioni::$nomePortale = "La Videotexca, dove ballano le storie";
+    break;
 	case 'spano.sc.unica.it':
 		Impostazioni::$db_host = 'localhost';
 		Impostazioni::$db_user = 'porcuSimone';

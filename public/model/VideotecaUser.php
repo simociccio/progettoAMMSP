@@ -11,11 +11,7 @@ class VideotecaUser {
 
     }
 
-    /**
-     * Restiuisce un singleton per creare utenti
-     * @return \UserFactory
-     */
-    public static function instance() {
+    public static function getInstance() {
         if (!isset(self::$singleton)) {
             self::$singleton = new VideotecaUser();
         }
@@ -24,7 +20,7 @@ class VideotecaUser {
     }
 
 
-	public static function getUserFromDB($_u,$_p){
+	public function getUserFromDB($_u,$_p){
 
         $mysqli = Db::getInstance()->connectDb();
 
@@ -62,10 +58,10 @@ class VideotecaUser {
         }
     }
     
-    public static function getUserEntityFromDB($_u){
+    public function getUserEntityFromDB($_u){
         $mysqli = Db::getInstance()->connectDb();
 
-        if ($stmt = $mysqli->prepare("SELECT user,permessi,nome FROM utenti WHERE user = ?")) {
+        if ($stmt = $mysqli->prepare("SELECT id,user,permessi,nome FROM utenti WHERE user = ?")) {
             // Linkiamo i parametri con i placeholder (?)
             $stmt->bind_param("s", $_u);
 
@@ -75,17 +71,18 @@ class VideotecaUser {
             }
 
             // Linkiamo i risultati su delle variabili
+            $risposta_id = NULL;
             $risposta_u = NULL;
             $risposta_r = NULL;
             $risposta_nc = NULL;
-            if (!$stmt->bind_result($risposta_u, $risposta_r,$risposta_nc)) {
+            if (!$stmt->bind_result($risposta_id,$risposta_u, $risposta_r,$risposta_nc)) {
                 echo "Binding output parameters failed: (" . $stmt->errno . ") " . $stmt->error;
             }
 
             // Recupero le righe una alla volta
             if($stmt->fetch()) {
                 $stmt->close(); // Ho finito di elaborare dati, chiudo lo statement
-                $var = new User($risposta_u, $risposta_r, $risposta_nc);
+                $var = new User($risposta_id,$risposta_u, $risposta_r, $risposta_nc);
                 return $var;
             }
             else 

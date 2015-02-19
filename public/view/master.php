@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title><?= $datiPagina->getTitolo() ?> - <?= Impostazioni::$nomePortale ?></title>
-	<link href="res/stile.css" rel="stylesheet" type="text/css">
+	<link href="<?= Impostazioni::$app_path ?>/res/stile.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <base href="<?= Impostazioni::$app_path ?>">
 	<meta charset="UTF-8">
 	<script language="javascript">
@@ -25,11 +26,12 @@
 
             if($datiPagina->getRole() == 1){
                 ?>
-                    SEI ADMIN
+                <li><a href='catalogo'>CATALOGO</a></li>
+                <li><a href='ordini'>LISTA ORDINI</a></li>
                 <?php
-            } else {
+            } else if($datiPagina->isLogged()){
                 ?>
-                    SEI UN BURDO
+                <li><a href='cronologia'>CRONOLOGIA ACQUISTI</a></li>
             <?php
             }
 

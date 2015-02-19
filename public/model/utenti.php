@@ -1,10 +1,12 @@
 <?php
     class User{
+        private $id;
         private $user;
         private $role;
         private $nomeCompleto;
         
-        public function __construct($u,$r,$nc) {
+        public function __construct($id,$u,$r,$nc) {
+            $this->id = $id;
             $this->user = $u;
             $this->role = $r;
             $this->nomeCompleto = $nc;
@@ -18,6 +20,10 @@
 
         public function getRole() {
             return $this->role;
+        }
+
+        public function getID() {
+            return $this->id;
         }
 
         public function stampaUser(){

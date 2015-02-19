@@ -41,6 +41,8 @@ body{
 #contenuto{
 	margin-top: 15px;
 	text-align: left;
+    overflow: auto;
+
 
 }
 
@@ -82,4 +84,51 @@ body{
 #loginform input{
     font-size: 24px;
     font-family: monospace;
+}
+
+/* LISTA FILM */
+#films-container{
+
+}
+
+.films-one{
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+.films-title{
+    text-align: center;
+    font-size: 22px;
+    width: 100%;
+}
+.films-sx{
+    float: left;
+    width: 20%;
+
+    height: 100%;
+}
+.films-dx{
+    height: 100%;
+    float: left;
+    width: 80%;
+
+}
+
+.films-dxsx{
+
+}
+
+/* ADMIN */
+
+#insert-film{
+    display: none;
+}
+
+#insert-film-enabler, #insert-film-disabler{
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 15px;
 }
