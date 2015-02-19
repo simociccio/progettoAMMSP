@@ -33,7 +33,7 @@ class VideotecaVendite {
             if($row[0] > 0){
                 $queryAggiornaQuantita = "UPDATE film SET quantita = quantita - 1 WHERE id = '$idF';";
                 $ts = date('Y-m-d H:i:s');
-                $queryInserisciAcquisto = "INSERT INTO `videoteca`.`vendite` (`id`, `idUtente`, `idFilm`, `timestamp`) VALUES (NULL, '$idU', '$idF', '$ts');";
+                $queryInserisciAcquisto = "INSERT INTO vendite (`id`, `idUtente`, `idFilm`, `timestamp`) VALUES (NULL, '$idU', '$idF', '$ts');";
                 $result = $mysqli->query($queryAggiornaQuantita);
                // $result = $mysqli->query($queryInserisciAcquisto);
                 if (!$mysqli->query($queryInserisciAcquisto)) {
