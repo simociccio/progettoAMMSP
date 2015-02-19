@@ -8,6 +8,8 @@ include_once 'controller/BaseController.php';
 include_once 'controller/AmmController.php';
 include_once 'controller/UserController.php';
 
+date_default_timezone_set('Europe/Rome');
+
 // Avviamo la sessione
 session_start();
 
